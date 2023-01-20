@@ -90,7 +90,7 @@ app.post('/api/notes', (request, response)=>{
   response.json(newNote)
 })
 
-app.use((request,request)=>{
+app.use((request,response)=>{
   response.status(404).json({
     error: 'Not found'
   })
