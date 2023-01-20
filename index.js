@@ -1,5 +1,6 @@
 const { request, response } = require('express')
 const express = require('express')
+const cors = require('cors')
 //const http = require('http')
 //import http from 'http'
 
@@ -8,7 +9,7 @@ const logger = require('./loggerMiddleware')
 
 
 
-
+app.use(cors())
 app.use(express.json())
 
 app.use(logger)
@@ -89,11 +90,11 @@ app.post('/api/notes', (request, response)=>{
   response.json(newNote)
 })
 
-//app.use((request,request)=>{
- // response.status(404).json({
- //   error: 'Not found'
- // })
-//})
+app.use((request,request)=>{
+  response.status(404).json({
+    error: 'Not found'
+  })
+})
 
 //const PORT = 3001
 //const PORT = process.env.PORT || 3001
