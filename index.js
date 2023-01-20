@@ -97,12 +97,9 @@ app.use((request,response)=>{
 })
 
 //const PORT = 3001
-//const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001
 
-//app.listen(PORT,() =>{
-//  console.log(`Server running on port ${PORT}`)
-//})
+app.listen(PORT,() =>{
+  console.log(`Server running on port ${PORT}`)
+})
 
-http.listen(3001, function(){
-  console.log('listening on *:3001');
-});
